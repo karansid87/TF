@@ -1,4 +1,4 @@
-name: 'MFS-Plan'
+name: 'Test-Plan'
 on:
   workflow_dispatch:
     branches:
@@ -24,22 +24,22 @@ jobs:
       - uses: actions/checkout@v1
 
       - id: private-modules
-        uses: sidanak/Smart-GQO-Limerick@main
-        with:
-          org: sidanak
-          token: ${{ secrets.KSIDANA_PAT }}
+        uses: karansid87/TF@main
+        #with:
+          #org: sidanak
+          #token: ${{ secrets.KSIDANA_PAT }}
       
       - name: 'Terraform Init'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 1.2.2
           tf_actions_subcommand: 'init'
-          tf_actions_working_dir: "./Test/"
+          tf_actions_working_dir: "./TF/"
 
       - name: 'Terraform plan'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 1.2.2
           tf_actions_subcommand: 'plan'
-          tf_actions_working_dir: "./Test/"
+          tf_actions_working_dir: "./TF/"
           #args: '-var-file="global.tfvars"'
