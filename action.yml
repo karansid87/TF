@@ -1,0 +1,25 @@
+name: 'Terraform PLAN'
+on:
+  workflow_dispatch:
+    branches:
+    - main
+  pull_request:
+ 
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    environment: production
+         
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run: 
+        shell: bash
+        
+runs: 
+  using: "composite"
+  steps:
+  - name: Setup private repo credentials for private modules
+    run: git config --global url."https://git:${{ inputs.token }}@github.com/${{ inputs.org }}".insteadOf "https://github.com/${{ inputs.org }}"
+    shell: sh
+    
