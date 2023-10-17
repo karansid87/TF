@@ -1,0 +1,43 @@
+name: 'Test-Destroy'
+on:
+  workflow_dispatch:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  terraform:
+    name: Terraform
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+      
+    
+    runs-on: ubuntu-latest
+    environment: production
+    container: hashicorp/terraform
+    steps:
+      - uses: actions/checkout@v1
+
+      - id: private-modules
+        uses: karansid87/TF@main
+        with:
+          org: karansid87
+          #token: ${{ secrets.KSIDANA_PAT }}
+      
+      - name: 'Terraform Init'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 1.2.2
+          tf_actions_subcommand: 'init'
+          tf_actions_working_dir: "TF/"
+
+      - name: 'Terraform plan'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 1.2.2
+          tf_actions_subcommand: 'destroy'
+          tf_actions_working_dir: "TF/"
+          #args: '-var-file="global.tfvars"'
