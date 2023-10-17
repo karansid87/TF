@@ -13,9 +13,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
-      #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #Private_module: github.com/sidanak/Smart-GQO-Limerick@main
-      #KSIDANA_PAT: ${{ secrets.KSIDANA_PAT }}
+      
     
     runs-on: ubuntu-latest
     environment: production
@@ -24,7 +22,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - id: private-modules
-        uses: karansid87/TF@main
+        uses: karansid87@main
         #with:
           #org: sidanak
           #token: ${{ secrets.KSIDANA_PAT }}
