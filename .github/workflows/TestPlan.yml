@@ -23,8 +23,8 @@ jobs:
 
       - id: private-modules
         uses: karansid87@main
-        #with:
-          #org: sidanak
+        with:
+          org: karansid87
           #token: ${{ secrets.KSIDANA_PAT }}
       
       - name: 'Terraform Init'
