@@ -12,8 +12,8 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name = "myrg-1"
-    storage_account_name = "terraformstate"
+    resource_group_name = "terraform-storage-rg"
+    storage_account_name = "terraformstate1"
     container_name = "tfstatefiles"
     key = "tf-test.tfstate"
   }
