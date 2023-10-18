@@ -20,7 +20,7 @@ source_image_reference {
   publisher = "RedHat"
   offer = "rhel-byos"
   sku = "rhel-lvm92"
-  version = "latest"
+  version = "9.2.2023060509"
 }
 custom_data = filebase64("${path.module}/app-scripts/app1-cloud-init.txt")
 
