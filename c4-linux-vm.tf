@@ -18,8 +18,8 @@ os_disk {
 }
 source_image_reference {
   publisher = "RedHat"
-  offer = "RHEL"
-  sku = "87-gen2"
+  offer = "rhel-byos"
+  sku = "rhel-lvm92"
   version = "latest"
 }
 custom_data = filebase64("${path.module}/app-scripts/app1-cloud-init.txt")
