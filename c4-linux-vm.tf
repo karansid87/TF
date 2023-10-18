@@ -4,7 +4,7 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   computer_name = "devlinux-${count.index}"
   resource_group_name = azurerm_resource_group.myrg.name
   location = azurerm_resource_group.myrg.location
-  size = "Standard_B1s"
+  size = "Standard_D2s_v4"
   admin_username = "azureuser"
   network_interface_ids = [ element(azurerm_network_interface.myvmnic[*].id, count.index) ]
   admin_ssh_key {
@@ -19,7 +19,7 @@ os_disk {
 source_image_reference {
   publisher = "RedHat"
   offer = "RHEL"
-  sku = "83-gen2"
+  sku = "87-gen2"
   version = "latest"
 }
 custom_data = filebase64("${path.module}/app-scripts/app1-cloud-init.txt")
