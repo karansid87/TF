@@ -20,17 +20,17 @@ os_disk {
 
 source_image_reference {
   publisher = "RedHat"
-  offer = "rhel-byos"
-  sku = "rhel-lvm92"
-  version = "9.2.2023060509"
+  offer = "RHEL"
+  sku = "92-gen2"
+  version = "latest"
 }
-
+/*
 plan {
   name = "rhel-lvm92"
   publisher = "RedHat"
   product = "rhel-byos"
 }
-
+*/
 custom_data = filebase64("${path.module}/app-scripts/app1-cloud-init.txt")
 
 }
