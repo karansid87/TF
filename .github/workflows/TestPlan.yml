@@ -41,3 +41,4 @@ jobs:
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: "TF/"
           #args: '-var-file="global.tfvars"'
+          args: -lock=false
