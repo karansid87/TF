@@ -18,7 +18,7 @@ terraform {
     key = "tf-test.tfstate"
   }
 }
-
+#this is 
 # Provider Block
 provider "azurerm" {
  features {}          
