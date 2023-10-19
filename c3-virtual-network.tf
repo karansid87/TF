@@ -29,7 +29,7 @@ resource "azurerm_public_ip" "mypublicip" {
 
 # Create Network Interface
 resource "azurerm_network_interface" "myvmnic" {
-  count = 2
+  count = 3
   name                = "vmnic-${count.index}"
   location            = azurerm_resource_group.myrg.location
   resource_group_name = azurerm_resource_group.myrg.name
