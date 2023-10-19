@@ -16,7 +16,7 @@ resource "azurerm_subnet" "mysubnet" {
 
 # Create Public IP Address
 resource "azurerm_public_ip" "mypublicip" {
-  count = 2 
+  count = 3
   name                = "mypublicip-${count.index}"
   resource_group_name = azurerm_resource_group.myrg.name
   location            = azurerm_resource_group.myrg.location
