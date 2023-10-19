@@ -16,7 +16,7 @@ resource "azurerm_subnet" "mysubnet" {
 
 # Create Public IP Address
 resource "azurerm_public_ip" "mypublicip" {
-  count = 3
+  count = 4
   name                = "mypublicip-${count.index}"
   resource_group_name = azurerm_resource_group.myrg.name
   location            = azurerm_resource_group.myrg.location
@@ -29,7 +29,7 @@ resource "azurerm_public_ip" "mypublicip" {
 
 # Create Network Interface
 resource "azurerm_network_interface" "myvmnic" {
-  count = 3
+  count = 4
   name                = "vmnic-${count.index}"
   location            = azurerm_resource_group.myrg.location
   resource_group_name = azurerm_resource_group.myrg.name
