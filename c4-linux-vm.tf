@@ -1,5 +1,5 @@
 resource "azurerm_linux_virtual_machine" "mylinuxvm" {
-  count = 5
+  count = 4
   name = "mylinuxvm-${count.index}"
   computer_name = "devlinux${count.index}"
   resource_group_name = azurerm_resource_group.myrg.name
