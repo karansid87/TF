@@ -1,4 +1,4 @@
-name: 'New-Plan'
+name: 'New-Destroy'
 on:
   workflow_dispatch:
     branches:
