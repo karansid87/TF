@@ -15,7 +15,7 @@ terraform {
     resource_group_name = "terraform-storage-rg"
     storage_account_name = "terraformstate5"
     container_name = "tfstatefiles"
-    key = "tf-ank1.tfstate"
+    key = "tf-ank2.tfstate"
   }
 }
 
