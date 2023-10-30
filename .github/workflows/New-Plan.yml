@@ -41,11 +41,4 @@ jobs:
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: "./N1/"
 
-      - name: 'Terraform plan'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: 1.2.2
-          tf_actions_subcommand: 'plan'
-          tf_actions_working_dir: "./New/"
-          #args: '-var-file="global.tfvars"'
-          #args: -lock=false
+      
