@@ -23,7 +23,7 @@ variable "resoure_group_name" {
 variable "resoure_group_location" {
   description = "Resource Group Location"
   type = string
-  default = "East US"
+  default = "East US2"
 }
 
 # 5. Virtual Network Name

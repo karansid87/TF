@@ -9,5 +9,5 @@ resource "azurerm_resource_group" "myrg" {
 
 resource "azurerm_resource_group" "myrg" {
   name = "karan"
-  location = "East US"
+  location = "East US2"
 }
