@@ -1,4 +1,4 @@
-name: 'New-Apply'
+name: 'Ank-Apply'
 on:
   workflow_dispatch:
     branches:
