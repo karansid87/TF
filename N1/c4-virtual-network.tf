@@ -22,7 +22,7 @@ resource "azurerm_subnet" "mysubnet" {
 */
 
 resource "azurerm_virtual_network" "myvnet" {
-  name                = "myvnet-1"
+  name                = "karanvnet-1"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.myrg.location
   resource_group_name = azurerm_resource_group.myrg.name
@@ -30,7 +30,7 @@ resource "azurerm_virtual_network" "myvnet" {
 
 # Create Subnet
 resource "azurerm_subnet" "mysubnet" {
-  name                 = "mysubnet-1"
+  name                 = "karansubnet-1"
   resource_group_name  = azurerm_resource_group.myrg.name
   virtual_network_name = azurerm_virtual_network.myvnet.name
   address_prefixes     = ["10.0.2.0/24"]
