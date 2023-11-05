@@ -3,7 +3,7 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   for_each = var.environment
   name                = "mylinuxvm-${each.key}"
   computer_name       = "${each.key}" # Hostname of the VM
-  resource_group_name = data.azurerm_resource_group.RG.name
+  resource_group_name = var.RG
   location            = var.location
   size                = "Standard_B1s"
   admin_username      = "azureuser"
@@ -25,9 +25,4 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   version = "latest"
 }
   #custom_data = filebase64("${path.module}/app-scripts/app1-cloud-init.txt")
-}
-
-
-data "azurerm_resource_group" "RG" {
-  name = "${var.RG}"
 }
