@@ -42,7 +42,7 @@ resource "azurerm_public_ip" "mypublicip" {
   for_each = var.environment
   #name                = "mypublicip-1"
   name                 =  "${each.key}-mypublicip"  
-  resource_group_name = azurerm_resource_group.RG.name
+  resource_group_name = data.azurerm_resource_group.RG.name
   location            = var.location
   allocation_method   = "Static"
   domain_name_label = "app1-vm-${random_string.myrandom[each.key].id}"
@@ -58,7 +58,7 @@ resource "azurerm_network_interface" "myvmnic" {
   #name                = "vmnic"
   name                 = "${each.key}-myvmnic"    
   location            = var.location
-  resource_group_name = azurerm_resource_group.RG.name
+  resource_group_name = data.azurerm_resource_group.RG.name
 
   ip_configuration {
     name                          = "internal"
