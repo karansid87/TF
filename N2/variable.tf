@@ -6,11 +6,6 @@ variable "RG" {
   type     = string
 }
 
-variable "subscription_id" {
-  type        = string
-  description = "The Azure subscription id used to provision resources."
-}
-
 variable "nwprefix" {
   type    = map(string)
 }
