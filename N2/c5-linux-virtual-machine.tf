@@ -3,8 +3,8 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   for_each = var.environment
   name                = "mylinuxvm-${each.key}"
   computer_name       = "${each.key}" # Hostname of the VM
-  resource_group_name = azurerm_resource_group.myrg.name
-  location            = azurerm_resource_group.myrg.location
+  resource_group_name = data.azurerm_resource_group.RG.name
+  location            = var.location
   size                = "Standard_B1s"
   admin_username      = "azureuser"
   network_interface_ids = [azurerm_network_interface.myvmnic[each.key].id]
@@ -28,3 +28,6 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
 }
 
 
+data "azurerm_resource_group" "RG" {
+  name = "${var.RG}"
+}
