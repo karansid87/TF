@@ -39,7 +39,7 @@ variable "azurerm_subnet" {
 variable "environment" {
   description = "Environment Name"
   type = set(string)
-  default = ["vm1","vm2", "vm3", "vm4"]
+  default = ["vm1","vm2", "vm3"]
   #default = ["test"]
 }
 
