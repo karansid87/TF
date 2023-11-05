@@ -11,11 +11,11 @@ terraform {
       version = ">= 3.0"
     }
   }
-  backend "azurerm" {
+ backend "azurerm" {
     resource_group_name = "terraform-storage-rg"
-    storage_account_name = "terraformstate5"
+    storage_account_name = "terraformstate87"
     container_name = "tfstatefiles"
-    key = "tf-New7.tfstate"
+    key = "tf-N2-1.tfstate"
   }
 }
 
